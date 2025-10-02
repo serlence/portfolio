@@ -1,0 +1,538 @@
+/* Сброс отступов */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Цвета для темной темы */
+:root {
+  --bg: #282c33;
+  --text: #ffffff;
+  --accent: #c778dd;
+  --border: #abb2bf;
+}
+
+/* Цвета для светлой темы */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #212529;
+  --accent: #6f42c1;
+  --border: #dee2e6;
+}
+
+/* Основные стили */
+body {
+  font-family: 'Fira Code', monospace;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Контейнер */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Анимация плавного появления страницы */
+.container {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.preload .container {
+  opacity: 0;
+  transform: translateY(8px);
+}
+body:not(.preload) .container {
+  opacity: 1;
+  transform: none;
+}
+
+/* Шапка */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent);
+}
+
+/* Плавная прокрутка */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Кнопка темы */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Главная секция */
+.hero {
+  padding: 64px 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  line-height: 1.3;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.hero-description {
+  color: var(--text);
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+/* Кнопка контактов */
+.contact-btn {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  padding: 8px 16px;
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+}
+
+.contact-btn:hover {
+  background-color: var(--accent);
+}
+
+/* Изображение в главной секции */
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  background-color: var(--bg);
+}
+
+.status-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+
+/* Цитата */
+.quote-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.quote-box {
+  border: 1px solid var(--border);
+  padding: 32px;
+  max-width: 712px;
+}
+
+.quote-text {
+  font-size: 24px;
+  color: var(--text);
+}
+
+.quote-author {
+  border: 1px solid var(--border);
+  padding: 16px;
+  color: var(--text);
+  background-color: var(--bg);
+  margin-top: 16px;
+}
+
+/* Заголовки секций */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.hash {
+  color: var(--accent);
+}
+
+/* Секция навыков */
+.skills {
+  padding: 64px 0;
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.skills-image {
+  display: flex;
+  justify-content: center;
+}
+
+.skills-image img {
+  width: 349px;
+  height: 282px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.skill-category {
+  border: 1px solid var(--border);
+}
+
+.skill-header {
+  padding: 8px;
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-list {
+  padding: 8px;
+  color: var(--text);
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Секция "Обо мне" */
+.about {
+  padding: 64px 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--text);
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.about-placeholder {
+  width: 339px;
+  height: 507px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
+
+/* Секция контактов */
+.contacts {
+  padding: 64px 0;
+}
+
+.contacts-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contacts-text {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.contact-box {
+  border: 1px solid var(--border);
+  padding: 16px;
+}
+
+.contact-box h3 {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.contact-icon {
+  font-size: 16px;
+}
+
+/* Подвал */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  margin-bottom: 48px;
+}
+
+.footer-left .logo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.logo-email {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.footer-text {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.footer-right h3 {
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: var(--text);
+  font-size: 16px;
+}
+
+/* Вспомогательно для кликабельной почты */
+.copy-email {
+  cursor: pointer;
+  border-bottom: 1px dashed var(--border);
+}
+.copy-email:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+  }
+  
+  .nav {
+    gap: 16px;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+  }
+  
+  .theme-toggle {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  
+  .hero {
+    padding: 48px 0;
+  }
+  
+  .hero-content,
+  .skills-content,
+  .about-content,
+  .contacts-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .hero-title {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .hero-img {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+  }
+  
+  .skills-image img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+  }
+  
+  .about-placeholder {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+  }
+  
+  .quote-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .quote-box {
+    max-width: 100%;
+    padding: 24px;
+  }
+  
+  .quote-text {
+    font-size: 20px;
+  }
+}
+
+/* Для маленьких экранов */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .nav {
+    gap: 12px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+  }
+  
+  .hero-title {
+    font-size: 20px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+  }
+  
+  .hero-description {
+    font-size: 14px;
+  }
+  
+  .contact-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .quote-text {
+    font-size: 18px;
+  }
+  
+  .quote-box {
+    padding: 16px;
+  }
+  
+  .skill-header,
+  .skill-list {
+    font-size: 14px;
+  }
+
+}
